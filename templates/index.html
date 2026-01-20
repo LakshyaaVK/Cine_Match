@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 CineMatch | AI Movie Recommendations</title>
+    <meta name="description" content="Get personalized movie recommendations powered by AI. Find your next favorite film based on movies you love.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">CineMatch</span>
+            </div>
+            <p class="tagline">AI-Powered Movie Recommendations</p>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <h1 class="title">Find Your Next <span class="gradient-text">Favorite Movie</span></h1>
+            <p class="subtitle">Enter a movie you love, and we'll recommend similar films you'll enjoy</p>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                    <input 
+                        type="text" 
+                        id="movieInput" 
+                        class="search-input" 
+                        placeholder="Search for a movie... (e.g., The Dark Knight)"
+                        autocomplete="off"
+                    >
+                    <button id="searchBtn" class="search-btn">
+                        <span>Get Recommendations</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Autocomplete Dropdown -->
+                <div id="autocomplete" class="autocomplete-dropdown"></div>
+            </div>
+
+            <!-- Popular Movies Suggestions -->
+            <div class="suggestions">
+                <span class="suggestions-label">Popular:</span>
+                <button class="suggestion-chip" data-movie="Avatar">Avatar</button>
+                <button class="suggestion-chip" data-movie="The Dark Knight">The Dark Knight</button>
+                <button class="suggestion-chip" data-movie="Inception">Inception</button>
+                <button class="suggestion-chip" data-movie="Titanic">Titanic</button>
+                <button class="suggestion-chip" data-movie="The Avengers">The Avengers</button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="results-section hidden">
+            <div class="results-header">
+                <h2>Because you liked <span id="selectedMovie" class="highlight-movie"></span></h2>
+                <p class="results-subtitle">Here are movies you might enjoy</p>
+            </div>
+            
+            <div id="movieGrid" class="movie-grid">
+                <!-- Movie cards will be inserted here -->
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading hidden">
+            <div class="loading-spinner"></div>
+            <p>Finding perfect matches...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="error-message hidden">
+            <div class="error-icon">🎭</div>
+            <h3>Movie Not Found</h3>
+            <p id="errorText"></p>
+            <div id="errorSuggestions" class="error-suggestions"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Powered by <strong>Content-Based Filtering</strong> & <strong>Cosine Similarity</strong></p>
+        <p class="footer-stats">📊 Analyzing <span id="movieCount">4800+</span> movies from TMDB dataset</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
