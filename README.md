@@ -8,7 +8,7 @@ A content-based movie recommendation system built with Python that suggests simi
 
 
 
-##live preview(gradio) https://huggingface.co/spaces/slaygen/CineMatch
+## live preview(gradio) https://huggingface.co/spaces/slaygen/CineMatch
 
 
 
