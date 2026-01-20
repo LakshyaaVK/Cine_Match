@@ -6,13 +6,11 @@ A content-based movie recommendation system built with Python that suggests simi
 ![Flask](https://img.shields.io/badge/Flask-3.1-green.svg)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.6-orange.svg)
 
-## ✨ Features
 
-- **Content-Based Filtering**: Recommends movies based on similarity in genres, keywords, cast, and plot
-- **Beautiful Web Interface**: Modern dark theme with glassmorphism design
-- **Live Autocomplete**: Search suggestions as you type
-- **4800+ Movies**: Powered by TMDB dataset
-- **No API Required**: Works completely offline after initial setup
+
+##live preview(gradio) https://huggingface.co/spaces/slaygen/CineMatch
+
+
 
 ## 🛠️ How It Works
 
